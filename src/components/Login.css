@@ -1,0 +1,22 @@
+.login-Container {
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  /* background-color: aqua;
+  text-align: center; */
+}
+
+.divForLabelAndInput {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+}
+
+.button {
+  width: 100px;
+}
+
+.label {
+  font-size: large;
+  font-weight: bold;
+}
