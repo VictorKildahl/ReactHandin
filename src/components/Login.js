@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./Login.css";
 
 // interface JWTObject {
 //   Name: String;
@@ -66,34 +67,36 @@ function Login() {
   };
 
   return (
-    <form>
-      <label>
-        Username
+    <form className="login-Container">
+      <div className="divForLabelAndInput">
+        <label className="label">Username:</label>
         <input
           type="text"
           onChange={(event) => {
             setUsername(event.target.value);
           }}
         />
-      </label>
-      <label>
-        Password:
+      </div>
+      <div className="divForLabelAndInput">
+        <label className="label">Password:</label>
         <input
           type="text"
           onChange={(event) => {
             setPassword(event.target.value);
           }}
         />
-      </label>
-      <input
-        type="submit"
-        value="Login"
-        onClick={(event) => {
-          event.preventDefault();
-          //login(username, password);
-          decodeJwt();
-        }}
-      />
+      </div>
+      <div className="divForLabelAndInput">
+        <input
+          type="submit"
+          value="Login"
+          onClick={(event) => {
+            event.preventDefault();
+            login(username, password);
+            //decodeJwt();
+          }}
+        />
+      </div>
     </form>
   );
 }
