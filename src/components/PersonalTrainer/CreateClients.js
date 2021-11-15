@@ -7,8 +7,31 @@ function CreateClients() {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
-  const CreateClientss = async () => {
-    console.log("PT");
+  const createClients = async () => {
+    console.log("firstname" + firstname);
+    console.log("lastname" + lastname);
+    console.log("email" + email);
+    console.log("password" + password);
+
+    fetch("https://afe2021fitness.azurewebsites.net/api/Users", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization:
+          "Bearer " +
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJOYW1lIjoiTWFuYWdlciIsIlJvbGUiOiJNYW5hZ2VyIiwiVXNlcklkIjoiMSIsIm5iZiI6IjE2MzY5ODI4MDAiLCJleHAiOiIxNjM3MDY5MjAwIn0.p13_60lrgVHVonT37Oji9jZD9FQ0Awhzqyc6aNLA8Vo",
+      },
+      body: JSON.stringify({
+        firstName: firstname,
+        lastName: lastname,
+        email: email,
+        password: password,
+        accountType: "Client",
+      }),
+    }).then((response) => {
+      response.json();
+    });
   };
 
   return (
@@ -56,7 +79,7 @@ function CreateClients() {
         value="Create clients"
         onClick={(event) => {
           event.preventDefault();
-          //   createPT();
+          createClients();
         }}
       />
     </div>
