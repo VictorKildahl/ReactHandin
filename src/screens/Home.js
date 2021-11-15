@@ -1,9 +1,11 @@
 import React from "react";
+import CreatePersonalTrainer from "../components/CreatePersonalTrainer";
 
 function Home() {
   return (
     <div>
-      <h1>hej</h1>
+      <h1>HOME</h1>
+      <CreatePersonalTrainer />
     </div>
   );
 }
