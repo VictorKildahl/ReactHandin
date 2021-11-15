@@ -1,5 +1,5 @@
 import React from "react";
-import CreatePersonalTrainer from "../components/CreatePersonalTrainer";
+import CreatePersonalTrainer from "../components/CreatePersonalTrainer/CreatePersonalTrainer";
 import CreateClients from "../components/PersonalTrainer/CreateClients";
 
 function Home() {

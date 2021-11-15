@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./CreatePersonalTrainer.css";
 
 function CreatePersonalTrainer() {
   const [firstname, setFirstname] = useState();
@@ -34,44 +35,46 @@ function CreatePersonalTrainer() {
   };
 
   return (
-    <form>
-      <label>
-        Firstname:
+    <div className="createClients-Container">
+      <div className="divForLabelAndInput">
+        <label className="label">Firstname:</label>
         <input
+          //   className="input"
           type="text"
           onChange={(event) => {
             setFirstname(event.target.value);
           }}
         />
-      </label>
-      <label>
-        Lastname:
+      </div>
+      <div className="divForLabelAndInput">
+        <label className="label">Lastname:</label>
         <input
           type="text"
           onChange={(event) => {
             setLastname(event.target.value);
           }}
         />
-      </label>
-      <label>
-        Email:
+      </div>
+      <div className="divForLabelAndInput">
+        <label className="label">Email:</label>
         <input
           type="text"
           onChange={(event) => {
             setEmail(event.target.value);
           }}
         />
-      </label>
-      <label>
-        Password:
+      </div>
+      <div className="divForLabelAndInput">
+        <label className="label">Password:</label>
         <input
           type="text"
           onChange={(event) => {
             setPassword(event.target.value);
           }}
         />
-      </label>
+      </div>
       <input
+        className="button"
         type="submit"
         value="Create Personal Trainer"
         onClick={(event) => {
@@ -79,7 +82,7 @@ function CreatePersonalTrainer() {
           createPT();
         }}
       />
-    </form>
+    </div>
   );
 }
 
