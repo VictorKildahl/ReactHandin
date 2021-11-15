@@ -24,7 +24,7 @@ function CreatePersonalTrainer() {
       },
       body: JSON.stringify({
         firstName: firstname,
-        lastName: password,
+        lastName: lastname,
         email: email,
         password: password,
         accountType: "PersonalTrainer",
