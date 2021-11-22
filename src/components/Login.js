@@ -5,7 +5,6 @@ import "./Login.css";
 function Login() {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
-  const [jwtObject, setJwtObject] = useState();
 
   const login = async (email, password) => {
     console.log("username" + email);
