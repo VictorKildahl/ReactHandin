@@ -8,11 +8,6 @@ function CreateClients() {
   const [password, setPassword] = useState();
 
   const createClients = async () => {
-    console.log("firstname" + firstname);
-    console.log("lastname" + lastname);
-    console.log("email" + email);
-    console.log("password" + password);
-
     fetch("https://afe2021fitness.azurewebsites.net/api/Users", {
       method: "POST",
       headers: {
