@@ -20,11 +20,17 @@ function Home() {
         <SeeWorkoutProgram />;
       </div>
     );
-  } else {
+  } else if (role === "Client") {
     return (
       <div>
         <h1>Welcome {role}!</h1>
         <h3>Der er ikke implementeret noget til clienten endnu</h3>
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <h1>Welcome! You are not logged in yet...</h1>
       </div>
     );
   }
