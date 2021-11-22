@@ -20,16 +20,18 @@ function Login() {
         email: email, //"boss@fitness.moon",
         password: password, //"asdfQWER",
       }),
-    }).then((response) => {
-      response.json().then((data) => {
-        localStorage.setItem("jwt", data.jwt);
+    })
+      .then((response) => {
+        response.json().then((data) => {
+          localStorage.setItem("jwt", data.jwt);
 
-        var decoded = jwt_decode(data.jwt);
-        localStorage.setItem("Role", decoded.Role);
-        // var role = localStorage.getItem("Role");
-        // console.log(role);
-      });
-    });
+          var decoded = jwt_decode(data.jwt);
+          localStorage.setItem("Role", decoded.Role);
+          // var role = localStorage.getItem("Role");
+          // console.log(role);
+        });
+      })
+      .then(() => window.location.reload());
   };
 
   return (
