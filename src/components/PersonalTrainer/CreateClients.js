@@ -18,9 +18,7 @@ function CreateClients() {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
-        Authorization:
-          "Bearer " +
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJOYW1lIjoiTWFuYWdlciIsIlJvbGUiOiJNYW5hZ2VyIiwiVXNlcklkIjoiMSIsIm5iZiI6IjE2MzY5ODI4MDAiLCJleHAiOiIxNjM3MDY5MjAwIn0.p13_60lrgVHVonT37Oji9jZD9FQ0Awhzqyc6aNLA8Vo",
+        Authorization: "Bearer " + localStorage.getItem("jwt"),
       },
       body: JSON.stringify({
         firstName: firstname,
