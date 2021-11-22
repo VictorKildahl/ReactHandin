@@ -1,79 +1,45 @@
+import jwt_decode from "jwt-decode";
 import React, { useState } from "react";
 import "./Login.css";
 
-// interface JWTObject {
-//   Name: String;
-//   Role: String;
-//   UserId: Number;
-//   nbf: Number;
-//   exp: Number;
-// }
-
 function Login() {
-  const [username, setUsername] = useState();
+  const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [jwtObject, setJwtObject] = useState();
 
-  const login = async (username, password) => {
-    console.log("username" + username);
+  const login = async (email, password) => {
+    console.log("username" + email);
     console.log("password" + password);
 
     fetch("https://afe2021fitness.azurewebsites.net/api/Users/login", {
       method: "POST",
       headers: {
-        Accept: "application/json",
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        username: username,
-        password: password,
+        email: email, //"boss@fitness.moon",
+        password: password, //"asdfQWER",
       }),
     }).then((response) => {
-      response.json();
-      console.log("response" + response.jwt);
+      response.json().then((data) => {
+        localStorage.setItem("jwt", data.jwt);
 
-      var base64Url = response.split(".")[1];
-      var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
-      var jsonPayload = decodeURIComponent(
-        atob(base64)
-          .split("")
-          .map(function (c) {
-            return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
-          })
-          .join("")
-      );
-
-      setJwtObject(JSON.parse(jsonPayload));
+        var decoded = jwt_decode(data.jwt);
+        localStorage.setItem("Role", decoded.Role);
+        // var role = localStorage.getItem("Role");
+        // console.log(role);
+      });
     });
-  };
-
-  const decodeJwt = async () => {
-    const response =
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJOYW1lIjoiTWFuYWdlciIsIlJvbGUiOiJNYW5hZ2VyIiwiVXNlcklkIjoiMSIsIm5iZiI6IjE2MzY5ODI4MDAiLCJleHAiOiIxNjM3MDY5MjAwIn0.p13_60lrgVHVonT37Oji9jZD9FQ0Awhzqyc6aNLA8Vo";
-    var base64Url = response.split(".")[1];
-    var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
-    var jsonPayload = decodeURIComponent(
-      atob(base64)
-        .split("")
-        .map(function (c) {
-          return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
-        })
-        .join("")
-    );
-
-    setJwtObject(jsonPayload);
-
-    console.log(jwtObject.Role);
   };
 
   return (
     <form className="login-Container">
       <div className="divForLabelAndInput">
-        <label className="label">Username:</label>
+        <label className="label">Email:</label>
         <input
           type="text"
           onChange={(event) => {
-            setUsername(event.target.value);
+            setEmail(event.target.value);
           }}
         />
       </div>
@@ -92,7 +58,7 @@ function Login() {
           value="Login"
           onClick={(event) => {
             event.preventDefault();
-            login(username, password);
+            login(email, password);
             //decodeJwt();
           }}
         />
