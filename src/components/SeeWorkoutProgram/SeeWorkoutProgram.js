@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./SeeWorkoutProgram.css";
+import WorkoutProgram from "./WorkoutProgram.js";
 
 function SeeWorkoutProgram() {
-  const [workout, setWorkout] = useState();
+  const [workouts, setWorkouts] = useState([]);
 
   const SeeWOP = async () => {
-    const resp = await fetch(
+    await fetch(
       "https://afe2021fitness.azurewebsites.net/api/WorkoutPrograms",
       {
         method: "GET",
@@ -15,31 +16,47 @@ function SeeWorkoutProgram() {
           Authorization: "Bearer " + localStorage.getItem("jwt"),
         },
       }
-    );
-
-    setWorkout(resp);
-    console.log(resp);
-
-    //   .then((response) => {
-    //     response.json();
-    //     setWorkout(response);
-    //   })
-    //   .then((resp) => {
-    //     console.log(resp);
-    //     console.log(workout.clientId);
-    //   });
+    ).then((response) => {
+      response.json().then((data) => {
+        setWorkouts(data);
+      });
+    });
   };
 
   useEffect(() => {
     SeeWOP();
   }, []);
 
+  // useEffect(() => {
+  //   console.log(workouts);
+  // }, [workouts]);
+
+  const wods = workouts.map((item) => (
+    <WorkoutProgram
+      workoutProgramId={item.workoutProgramId}
+      workoutName={item.name}
+      workoutDescription={item.description}
+    />
+    // <div>
+    //   <p>{item.workoutProgramId}</p>
+    //   <p>{item.name}</p>
+    //   <p>{item.description}</p>
+
+    //   <p>{item.exercises.exerciseId}</p>
+    //   <p>{item.exercises.name}</p>
+    //   <p>{item.exercises.description}</p>
+    //   <p>{item.exercises.sets}</p>
+    //   <p>{item.exercises.repetitionsd}</p>
+    //   <p>{item.exercises.personalTrainerId}</p>
+    // </div>
+  ));
+  console.log(wods);
   return (
     <div>
-      <h3>test</h3>
+      <h3>Workouts</h3>
+      <div>{wods}</div>
     </div>
   );
 }
 
 export default SeeWorkoutProgram;
-//{workout ? workout[0].name : "hej"}
