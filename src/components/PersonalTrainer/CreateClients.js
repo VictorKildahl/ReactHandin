@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./CreateClients.css";
+import CreateProgram from "./CreateProgram";
+import GetWorkoutProgram from "./GetWorkoutProgram";
 
 function CreateClients() {
   const [firstname, setFirstname] = useState();
@@ -30,6 +32,7 @@ function CreateClients() {
   return (
     <div className="createClients-Container">
       <div className="divForLabelAndInput">
+        {/* <h3>Create a Client</h3> */}
         <label className="label">Firstname:</label>
         <input
           //   className="input"
@@ -75,6 +78,12 @@ function CreateClients() {
           createClients();
         }}
       />
+      <div>
+        <CreateProgram></CreateProgram>
+      </div>
+      <div>
+        <GetWorkoutProgram></GetWorkoutProgram>
+      </div>
     </div>
   );
 }
