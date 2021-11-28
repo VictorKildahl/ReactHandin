@@ -1,13 +1,23 @@
 import React, { useState, useEffect } from "react";
+import DivForLabelAndInput from "../AddExercise/DivForLabelAndInput";
+import InputButton from "../AddExercise/InputButton";
+import WorkoutProgram from "../SeeWorkoutProgram/WorkoutProgram";
 
 function ClientPrograms() {
 
-    const [listOfprograms, setListOfPrograms] = useState([]);
+    const [listOfPrograms, setListOfPrograms] = useState([]);
     const [clientID, setClientID] = useState();
+
+    const typeText = "text";
+
+    const inputDisplayText = "User ID: "
+
+    const ButtonTypeSubmit = "submit";
+    const ButtonValue = "See programs";
 
     const GetClientPrograms = async () => {
         await fetch(
-        "https://afe2021fitness.azurewebsites.net/api/WorkoutPrograms/" + clientID,
+        "https://afe2021fitness.azurewebsites.net/api/WorkoutPrograms/client/" + clientID,
           {
             method: "GET",
             headers: {
@@ -22,40 +32,30 @@ function ClientPrograms() {
           });
         });
       };
-    
-      useEffect(() => {
-        GetClientPrograms();
-      }, []);
 
+    const wods = listOfPrograms.map((item) => (
+        <WorkoutProgram
+          workoutProgramId={item.workoutProgramId}
+          workoutName={item.name}
+          workoutDescription={item.description}
+        />
+    ));
 
     return (
-        <div>
+        <div className="clientContainer">
             <h2>Your Programs:</h2>
+            <DivForLabelAndInput
+            text={inputDisplayText}
+            function={setClientID}
+            type={typeText} />
+            <InputButton
+            type={ButtonTypeSubmit}
+            value={ButtonValue}
+            onClickFunction={GetClientPrograms}/>
+            <h3>Workouts</h3>
+            <div>{wods}</div>
         </div>
     );
 }
 
 export default ClientPrograms;
-
-// return (
-//     <div className="createClients-Container">
-//       <div className="divForLabelAndInput">
-//         <label className="label">Indsæt Workout ID:</label>
-//         <input
-//           type="text"
-//           onChange={(event) => {
-//             setID(event.target.value);
-//           }}
-//         />
-//       </div>
-//       <input
-//         className="buttonWorkout"
-//         type="submit"
-//         value="Get Workout"
-//         onClick={(event) => {
-//           event.preventDefault();
-//           GetWorkoutProgram();
-//         }}
-//       />
-//     </div>
-//   );
