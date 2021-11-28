@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
+import Collapsible from "react-collapsible";
 import DivForLabelAndInput from "../AddExercise/DivForLabelAndInput";
 import InputButton from "../AddExercise/InputButton";
 import WorkoutProgram from "../SeeWorkoutProgram/WorkoutProgram";
+import WorkoutProgramWithLink from "./WorkoutProgramWithLink";
 
 function ClientPrograms() {
 
@@ -34,13 +36,33 @@ function ClientPrograms() {
       };
 
     const wods = listOfPrograms.map((item) => (
-        <WorkoutProgram
-          workoutProgramId={item.workoutProgramId}
-          workoutName={item.name}
-          workoutDescription={item.description}
-        />
+        <ul>
+          <li>Workout ID: {item.workoutProgramId}</li>
+          <Collapsible trigger="See program">
+          <ul>
+            {item.exercises.map((sub) => (
+              <ul>
+                <li>Exercise ID: {sub.exerciseId}</li>
+                <li>Name: {sub.name}</li>
+                <li>Descriptioin: {sub.description}</li>
+                <li>Sets: {sub.sets}</li>
+                <li>Repetitions: {sub.repetitions}</li>
+                <li>Time: {sub.time}</li>
+              </ul>
+            ))}
+          </ul>
+          </Collapsible>
+        </ul>
     ));
 
+    // const wods2 = listOfPrograms.map((item) => (
+    //     <WorkoutProgramWithLink
+    //       workoutProgramId={item.workoutProgramId}
+    //       exercises={item.exerciseses}
+    //     />
+    // ));
+
+    // if(listOfPrograms.length)
     return (
         <div className="clientContainer">
             <h2>Your Programs:</h2>
