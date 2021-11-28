@@ -1,7 +1,10 @@
 import React from "react";
+import { Link } from 'react-router-dom'
+import AddExercise from "../components/AddExercise/AddExercise";
 import CreatePersonalTrainer from "../components/CreatePersonalTrainer/CreatePersonalTrainer";
 import CreateClients from "../components/PersonalTrainer/CreateClients";
 import SeeWorkoutProgram from "../components/SeeWorkoutProgram/SeeWorkoutProgram";
+import "./Home.css"
 
 function Home() {
   var role = localStorage.getItem("Role");
@@ -18,6 +21,7 @@ function Home() {
         <h1>Welcome {role}!</h1>
         <CreateClients />;
         <SeeWorkoutProgram />;
+        <Link to="/addExercise" className="button2">Add exercise</Link>
       </div>
     );
   } else if (role === "Client") {
