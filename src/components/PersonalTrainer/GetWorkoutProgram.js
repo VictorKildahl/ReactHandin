@@ -5,33 +5,33 @@ function GetWorkoutProgram() {
   const [ID, setID] = useState();
   const [workout, setWorkout] = useState();
 
-  const GetWorkoutProgram = async () => {
-    fetch(
-      "https://afe2021fitness.azurewebsites.net/api/WorkoutPrograms/" + ID,
-      {
-        method: "GET",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-          Authorization: "Bearer " + localStorage.getItem("jwt"),
-        },
-        body: JSON.stringify({
-          id: ID,
-        }),
-      }
-    ).then((response) => {
-      response.json().then((data) => {
-        setWorkout(data);
-      });
-    });
-  };
+  // const GetWorkoutProgram = async () => {
+  //   fetch(
+  //     "https://afe2021fitness.azurewebsites.net/api/WorkoutPrograms/" + ID,
+  //     {
+  //       method: "GET",
+  //       headers: {
+  //         Accept: "application/json",
+  //         "Content-Type": "application/json",
+  //         Authorization: "Bearer " + localStorage.getItem("jwt"),
+  //       },
+  //       body: JSON.stringify({
+  //         id: ID,
+  //       }),
+  //     }
+  //   ).then((response) => {
+  //     response.json().then((data) => {
+  //       setWorkout(data);
+  //     });
+  //   });
+  // };
 
-  useEffect(() => {
-    GetWorkoutProgram();
-    console.log(workout);
-  }, [ID]);
+  // useEffect(() => {
+  //   GetWorkoutProgram();
+  //   console.log(workout);
+  // }, [ID]);
 
-  console.log(workout);
+  // console.log(workout);
 
   return (
     <div className="createClients-Container">
