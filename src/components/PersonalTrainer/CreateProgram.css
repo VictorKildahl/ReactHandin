@@ -9,17 +9,17 @@
 }
 
 /* .flexRow {
-  display: flex;
-  flex-direction: row;
-} */
+    display: flex;
+    flex-direction: row;
+  } */
 
 .input {
   margin-left: 10px;
 }
 
-.button {
+.buttonWorkout {
   margin: 25px 0 0 10px;
-  width: 100px;
+  width: 150px;
 }
 
 .divForLabelAndInput {
