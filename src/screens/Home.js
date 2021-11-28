@@ -4,6 +4,7 @@ import AddExercise from "../components/AddExercise/AddExercise";
 import CreatePersonalTrainer from "../components/CreatePersonalTrainer/CreatePersonalTrainer";
 import CreateClients from "../components/PersonalTrainer/CreateClients";
 import SeeWorkoutProgram from "../components/SeeWorkoutProgram/SeeWorkoutProgram";
+import Client from "./Client";
 import "./Home.css"
 
 function Home() {
@@ -19,17 +20,19 @@ function Home() {
     return (
       <div>
         <h1>Welcome {role}!</h1>
-        <CreateClients />;
-        <SeeWorkoutProgram />;
+        <CreateClients />
+        <br/>
         <Link to="/addExercise" className="button2">Add exercise</Link>
+        <br/>
+        <br/>
+        <Link to="/seeClients" className="button2">See clients</Link>
+        <SeeWorkoutProgram />;
       </div>
     );
   } else if (role === "Client") {
     return (
-      <div>
-        <h1>Welcome {role}!</h1>
-        <h3>Der er ikke implementeret noget til clienten endnu</h3>
-      </div>
+      <Client>
+      </Client>
     );
   } else {
     return (

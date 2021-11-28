@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import AddExercise from "../AddExercise/AddExercise";
 import "./CreateClients.css";
 import CreateProgram from "./CreateProgram";
 import GetWorkoutProgram from "./GetWorkoutProgram";
@@ -78,11 +79,23 @@ function CreateClients() {
           createClients();
         }}
       />
+            <br/>
+      <br/>
+      <br/>
       <div>
         <CreateProgram></CreateProgram>
       </div>
+      <br/>
+      <br/>
+      <br/>
       <div>
         <GetWorkoutProgram></GetWorkoutProgram>
+      </div>
+      <br/>
+      <br/>
+      <br/>
+      <div>
+        <AddExercise></AddExercise>
       </div>
     </div>
   );

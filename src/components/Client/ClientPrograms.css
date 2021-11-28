@@ -1,4 +1,4 @@
-.container {
+.clientContainer {
     width: 300px;
   }
   
@@ -6,16 +6,20 @@
     font-size: large;
     font-weight: bold;
     margin-right: 10px;
-    width: fit-content;
   }
+  
+  /* .flexRow {
+      display: flex;
+      flex-direction: row;
+    } */
   
   .input {
     margin-left: 10px;
   }
   
-  .button {
+  .buttonWorkout {
     margin: 25px 0 0 10px;
-    width: 200px;
+    width: 150px;
   }
   
   .divForLabelAndInput {
@@ -24,8 +28,3 @@
     justify-content: space-between;
     padding: 10px;
   }
-
-  .header {
-    font-weight: bold;
-  }
-  

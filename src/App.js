@@ -3,6 +3,7 @@ import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import "./App.css";
 import AddExercise from "./components/AddExercise/AddExercise";
 import Login from "./components/Login";
+import SeeListOfClients from "./components/SeeListOfClients/SeeListOfClients";
 import Home from "./screens/Home";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/addExercise" element={<AddExercise />} />
+            <Route path="/seeClients" element={<SeeListOfClients />} />
           </Routes>
         </div>
       </BrowserRouter>

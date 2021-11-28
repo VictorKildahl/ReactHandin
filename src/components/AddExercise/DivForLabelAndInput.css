@@ -1,4 +1,4 @@
-.container {
+.createClients-Container {
     width: 300px;
   }
   
@@ -9,13 +9,18 @@
     width: fit-content;
   }
   
+  /* .flexRow {
+    display: flex;
+    flex-direction: row;
+  } */
+  
   .input {
     margin-left: 10px;
   }
   
   .button {
     margin: 25px 0 0 10px;
-    width: 200px;
+    width: 100px;
   }
   
   .divForLabelAndInput {
@@ -23,9 +28,6 @@
     flex-direction: row;
     justify-content: space-between;
     padding: 10px;
-  }
-
-  .header {
-    font-weight: bold;
+    width: fit-content;
   }
   
