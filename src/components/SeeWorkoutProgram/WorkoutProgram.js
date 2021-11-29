@@ -1,13 +1,15 @@
 import React from "react";
+import "./WorkoutProgram.css";
 
 function WorkoutProgram(props) {
   return (
-    <ul>
-      <li>ProgramId {props.workoutProgramId}</li>
-      <li>Name {props.workoutName}</li>
-      <li>Description {props.workoutDescription}</li>
-      {/* <li>Exercises {props.workoutExercises}</li> */}
-    </ul>
+    <div className="Placement">
+      <div className="box">
+        <p>ProgramId: {props.workoutProgramId}</p>
+        <p>Name: {props.workoutName}</p>
+        <p>Description: {props.workoutDescription}</p>
+      </div>
+    </div>
   );
 }
 

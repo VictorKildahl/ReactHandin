@@ -28,18 +28,17 @@ function CreatePersonalTrainer() {
   };
 
   return (
-    <div className="createClients-Container">
-      <div className="divForLabelAndInput">
+    <div>
+      <div className="placing">
         <label className="label">Firstname:</label>
         <input
-          //   className="input"
           type="text"
           onChange={(event) => {
             setFirstname(event.target.value);
           }}
         />
       </div>
-      <div className="divForLabelAndInput">
+      <div className="placing">
         <label className="label">Lastname:</label>
         <input
           type="text"
@@ -48,7 +47,7 @@ function CreatePersonalTrainer() {
           }}
         />
       </div>
-      <div className="divForLabelAndInput">
+      <div className="placing">
         <label className="label">Email:</label>
         <input
           type="text"
@@ -57,7 +56,7 @@ function CreatePersonalTrainer() {
           }}
         />
       </div>
-      <div className="divForLabelAndInput">
+      <div className="placing">
         <label className="label">Password:</label>
         <input
           type="text"

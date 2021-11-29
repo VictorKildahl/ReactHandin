@@ -1,18 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 
 function InputButton(props) {
-
-    return (
-        <input
-          className="button"
-          type={props.type}
-          value={props.value}
-          onClick={(event) => {
-            event.preventDefault();
-            props.onClickFunction();
-          }}
-        />
-    )
+  return (
+    <input
+      type={props.type}
+      value={props.value}
+      onClick={(event) => {
+        event.preventDefault();
+        props.onClickFunction();
+      }}
+    />
+  );
 }
 
 export default InputButton;

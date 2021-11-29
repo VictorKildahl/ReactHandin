@@ -1,13 +1,6 @@
-.button2 {
-    font: bold 13px Arial;
-    text-decoration: none;
-    background-color: #EEEEEE;
-    color: #333333;
-    padding: 2px 6px 2px 6px;
-    border-top: 1px solid #333333;
-    border-right: 1px solid #333333;
-    border-bottom: 1px solid #333333;
-    border-left: 1px solid #333333;
-    margin: 25px 0 0 6px;
-    border-radius: 3px;
-  }
+.placement {
+  display: flex;
+  justify-content: center;
+  min-width: 100%;
+  font: bold 13px Arial;
+}

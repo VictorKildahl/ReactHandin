@@ -37,19 +37,17 @@ function CreateProgram() {
   };
 
   return (
-    <div className="createClients-Container">
-      <div className="divForLabelAndInput">
-        {/* <h3>Create a Client</h3> */}
+    <div className="createProgram-Container">
+      <div className="placing3">
         <label className="label">Workout:</label>
         <input
-          //   className="input"
           type="text"
           onChange={(event) => {
             setName(event.target.value);
           }}
         />
       </div>
-      <div className="divForLabelAndInput">
+      <div className="placing3">
         <label className="label">Description:</label>
         <input
           type="text"
@@ -58,7 +56,7 @@ function CreateProgram() {
           }}
         />
       </div>
-      <div className="divForLabelAndInput">
+      <div className="placing3">
         <label className="label">Exercise</label>
         <input
           type="text"
@@ -67,7 +65,7 @@ function CreateProgram() {
           }}
         />
       </div>
-      <div className="divForLabelAndInput">
+      <div className="placing3">
         <label className="label">Description:</label>
         <input
           type="text"
@@ -76,7 +74,7 @@ function CreateProgram() {
           }}
         />
       </div>
-      <div className="divForLabelAndInput">
+      <div className="placing3">
         <label className="label">Sets:</label>
         <input
           type="text"
@@ -85,7 +83,7 @@ function CreateProgram() {
           }}
         />
       </div>
-      <div className="divForLabelAndInput">
+      <div className="placing3">
         <label className="label">Reps:</label>
         <input
           type="text"
@@ -94,7 +92,7 @@ function CreateProgram() {
           }}
         />
       </div>
-      <div className="divForLabelAndInput">
+      <div className="placing3">
         <label className="label">Time:</label>
         <input
           type="text"

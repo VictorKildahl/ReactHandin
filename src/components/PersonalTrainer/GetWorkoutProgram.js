@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./CreateProgram.css";
 
 function GetWorkoutProgram() {
@@ -55,7 +55,7 @@ function GetWorkoutProgram() {
 
   return (
     <div className="createClients-Container">
-      <div className="divForLabelAndInput">
+      <div>
         <label className="label">Indsæt Workout ID:</label>
         <input
           type="text"

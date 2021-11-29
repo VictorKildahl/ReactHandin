@@ -8,21 +8,12 @@
   margin-right: 10px;
 }
 
-/* .flexRow {
-  display: flex;
-  flex-direction: row;
-} */
-
-.input {
-  margin-left: 10px;
-}
-
 .button {
   margin: 25px 0 0 10px;
   width: 100px;
 }
 
-.divForLabelAndInput {
+.placing2 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;

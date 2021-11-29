@@ -1,0 +1,24 @@
+.Placement {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 15px;
+  padding-left: 20px;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border: 2px solid;
+  border-color: black;
+  width: 300px;
+  padding: 15px;
+  border-radius: 20px;
+  background-color: rgba(116, 105, 105, 0.067);
+}
+
+p {
+  margin-top: 1px;
+  margin-bottom: 1px;
+}

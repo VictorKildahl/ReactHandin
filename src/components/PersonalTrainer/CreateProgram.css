@@ -1,4 +1,4 @@
-.createClients-Container {
+.createProgram-Container {
   width: 300px;
 }
 
@@ -8,21 +8,12 @@
   margin-right: 10px;
 }
 
-/* .flexRow {
-    display: flex;
-    flex-direction: row;
-  } */
-
-.input {
-  margin-left: 10px;
-}
-
 .buttonWorkout {
   margin: 25px 0 0 10px;
   width: 150px;
 }
 
-.divForLabelAndInput {
+.placing3 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;

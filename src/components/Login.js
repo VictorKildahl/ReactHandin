@@ -26,8 +26,6 @@ function Login() {
 
           var decoded = jwt_decode(data.jwt);
           localStorage.setItem("Role", decoded.Role);
-          // var role = localStorage.getItem("Role");
-          // console.log(role);
         });
       })
       .then(() => window.location.reload());
@@ -35,7 +33,7 @@ function Login() {
 
   return (
     <form className="login-Container">
-      <div className="divForLabelAndInput">
+      <div className="placinglogin">
         <label className="label">Email:</label>
         <input
           type="text"
@@ -44,7 +42,7 @@ function Login() {
           }}
         />
       </div>
-      <div className="divForLabelAndInput">
+      <div className="placinglogin">
         <label className="label">Password:</label>
         <input
           type="text"
@@ -53,14 +51,13 @@ function Login() {
           }}
         />
       </div>
-      <div className="divForLabelAndInput">
+      <div className="placinglogin">
         <input
           type="submit"
           value="Login"
           onClick={(event) => {
             event.preventDefault();
             login(email, password);
-            //decodeJwt();
           }}
         />
       </div>

@@ -27,30 +27,14 @@ function SeeWorkoutProgram() {
     SeeWOP();
   }, []);
 
-  // useEffect(() => {
-  //   console.log(workouts);
-  // }, [workouts]);
-
   const wods = workouts.map((item) => (
     <WorkoutProgram
       workoutProgramId={item.workoutProgramId}
       workoutName={item.name}
       workoutDescription={item.description}
     />
-    // <div>
-    //   <p>{item.workoutProgramId}</p>
-    //   <p>{item.name}</p>
-    //   <p>{item.description}</p>
-
-    //   <p>{item.exercises.exerciseId}</p>
-    //   <p>{item.exercises.name}</p>
-    //   <p>{item.exercises.description}</p>
-    //   <p>{item.exercises.sets}</p>
-    //   <p>{item.exercises.repetitionsd}</p>
-    //   <p>{item.exercises.personalTrainerId}</p>
-    // </div>
   ));
-  console.log(wods);
+
   return (
     <div>
       <h3>Workouts</h3>

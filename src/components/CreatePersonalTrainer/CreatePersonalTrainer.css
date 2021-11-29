@@ -1,15 +1,7 @@
-.container {
-  width: 300px;
-}
-
 .label {
   font-size: large;
   font-weight: bold;
   margin-right: 10px;
-}
-
-.input {
-  margin-left: 10px;
 }
 
 .button {
@@ -17,7 +9,7 @@
   width: 200px;
 }
 
-.divForLabelAndInput {
+.placing {
   display: flex;
   flex-direction: row;
   justify-content: space-between;

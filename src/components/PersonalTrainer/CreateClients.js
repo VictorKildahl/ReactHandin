@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-import AddExercise from "../AddExercise/AddExercise";
 import "./CreateClients.css";
-import CreateProgram from "./CreateProgram";
-import GetWorkoutProgram from "./GetWorkoutProgram";
 
 function CreateClients() {
   const [firstname, setFirstname] = useState();
@@ -32,7 +29,7 @@ function CreateClients() {
 
   return (
     <div className="createClients-Container">
-      <div className="divForLabelAndInput">
+      <div className="placing2">
         {/* <h3>Create a Client</h3> */}
         <label className="label">Firstname:</label>
         <input
@@ -43,7 +40,7 @@ function CreateClients() {
           }}
         />
       </div>
-      <div className="divForLabelAndInput">
+      <div className="placing2">
         <label className="label">Lastname:</label>
         <input
           type="text"
@@ -52,7 +49,7 @@ function CreateClients() {
           }}
         />
       </div>
-      <div className="divForLabelAndInput">
+      <div className="placing2">
         <label className="label">Email:</label>
         <input
           type="text"
@@ -61,7 +58,7 @@ function CreateClients() {
           }}
         />
       </div>
-      <div className="divForLabelAndInput">
+      <div className="placing2">
         <label className="label">Password:</label>
         <input
           type="text"
@@ -79,24 +76,6 @@ function CreateClients() {
           createClients();
         }}
       />
-            <br/>
-      <br/>
-      <br/>
-      <div>
-        <CreateProgram></CreateProgram>
-      </div>
-      <br/>
-      <br/>
-      <br/>
-      <div>
-        <GetWorkoutProgram></GetWorkoutProgram>
-      </div>
-      <br/>
-      <br/>
-      <br/>
-      <div>
-        <AddExercise></AddExercise>
-      </div>
     </div>
   );
 }
