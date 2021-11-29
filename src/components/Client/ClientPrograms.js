@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Collapsible from "react-collapsible";
 import DivForLabelAndInput from "../AddExercise/DivForLabelAndInput";
 import InputButton from "../AddExercise/InputButton";
+import "./ClientPrograms.css";
 
 function ClientPrograms() {
   const [listOfPrograms, setListOfPrograms] = useState([]);
@@ -34,23 +35,25 @@ function ClientPrograms() {
   };
 
   const wods = listOfPrograms.map((item) => (
-    <ul>
-      <li>Workout ID: {item.workoutProgramId}</li>
-      <Collapsible trigger="See program">
-        <ul>
+    <div className="placing5">
+      <div className="box">
+        <p>Workout ID: {item.workoutProgramId}</p>
+        <Collapsible trigger="See program">
           {item.exercises.map((sub) => (
-            <ul>
-              <li>Exercise ID: {sub.exerciseId}</li>
-              <li>Name: {sub.name}</li>
-              <li>Descriptioin: {sub.description}</li>
-              <li>Sets: {sub.sets}</li>
-              <li>Repetitions: {sub.repetitions}</li>
-              <li>Time: {sub.time}</li>
-            </ul>
+            <div className="placing5">
+              <div>
+                <p>Exercise ID: {sub.exerciseId}</p>
+                <p>Name: {sub.name}</p>
+                <p>Descriptioin: {sub.description}</p>
+                <p>Sets: {sub.sets}</p>
+                <p>Repetitions: {sub.repetitions}</p>
+                <p>Time: {sub.time}</p>
+              </div>
+            </div>
           ))}
-        </ul>
-      </Collapsible>
-    </ul>
+        </Collapsible>
+      </div>
+    </div>
   ));
 
   // const wods2 = listOfPrograms.map((item) => (

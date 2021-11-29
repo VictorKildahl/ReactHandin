@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./CreateProgram.css";
+import "./GetWorkoutProgram.css";
 
 function GetWorkoutProgram() {
   const [ID, setID] = useState(101);
@@ -52,13 +52,15 @@ function GetWorkoutProgram() {
           <h3>{workout.name}</h3>
 
           {workout.exercises.map((sub) => (
-            <ul>
-              <li>Exercise Id: {sub.exerciseId}</li>
-              <li>Name: {sub.name}</li>
-              <li>description: {sub.description}</li>
-              <li>sets: {sub.sets}</li>
-              <li>repetitions/time: {sub.repetitions}</li>
-            </ul>
+            <div className="Placement">
+              <div className="box">
+                <p>Exercise Id: {sub.exerciseId}</p>
+                <p>Name: {sub.name}</p>
+                <p>description: {sub.description}</p>
+                <p>sets: {sub.sets}</p>
+                <p>repetitions/time: {sub.repetitions}</p>
+              </div>
+            </div>
           ))}
         </div>
       ) : (
