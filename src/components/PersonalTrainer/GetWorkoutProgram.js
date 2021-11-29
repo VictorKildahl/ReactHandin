@@ -46,21 +46,20 @@ function GetWorkoutProgram() {
 
       {workout != undefined ? (
         <div>
-          <h3>Result:</h3>
+          <h3>Workout:</h3>
           <div>Workout ID: {workout.workoutProgramId}</div>
           <div>name: {workout.name}</div>
           <h3>{workout.name}</h3>
-          <ul>
-            {workout.exercises.map((sub) => (
-              <ul>
-                <li>{sub.exerciseId}</li>
-                <li>Name: {sub.name}</li>
-                <li>description: {sub.description}</li>
-                <li>sets: {sub.sets}</li>
-                <li>repetitions/time: {sub.repetitions}</li>
-              </ul>
-            ))}
-          </ul>
+
+          {workout.exercises.map((sub) => (
+            <ul>
+              <li>Exercise Id: {sub.exerciseId}</li>
+              <li>Name: {sub.name}</li>
+              <li>description: {sub.description}</li>
+              <li>sets: {sub.sets}</li>
+              <li>repetitions/time: {sub.repetitions}</li>
+            </ul>
+          ))}
         </div>
       ) : (
         <p>Hent workout</p>
