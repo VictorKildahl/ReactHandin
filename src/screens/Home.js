@@ -1,7 +1,7 @@
 import React from "react";
 import Parent from "../components/Example2/Parent";
 import GraphQL from "../components/GraphQL/GraphQL";
-import ApiFetch from "../components/restFull/ApiFetch";
+import Restful from "../components/Restful.js/Restful";
 import "./Home.css";
 
 function Home() {
@@ -12,7 +12,7 @@ function Home() {
         <h1>Welcome {role}!</h1>
         <Parent />
         <GraphQL />
-        <ApiFetch />
+        <Restful />
       </div>
     );
   } else {
