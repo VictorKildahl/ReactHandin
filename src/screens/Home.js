@@ -1,4 +1,6 @@
 import React from "react";
+import Parent from "../components/Example2/Parent";
+import GraphQL from "../components/GraphQL/GraphQL";
 import "./Home.css";
 
 function Home() {
@@ -7,6 +9,8 @@ function Home() {
     return (
       <div className="placement">
         <h1>Welcome {role}!</h1>
+        <Parent />
+        <GraphQL />
       </div>
     );
   } else {
